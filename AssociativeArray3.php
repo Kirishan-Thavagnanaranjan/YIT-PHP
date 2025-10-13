@@ -42,6 +42,25 @@ $marks = [
 		]
 	];
 ?>
+	<?php function setBgColor($mark){
+			$bgcolor ="";
+			if ($mark > 75){
+				return $bgcolor = "green";
+			}
+			else if ($mark >65){
+				return $bgcolor ="yellow";
+			}
+			else if ($mark >55){
+				return $bgcolor = "blue";
+			}
+			else if ($mark >45){
+				return $bgcolor = "Orange";
+			}
+			else {
+				return $bgcolor ="red";
+			}
+				
+		} ?>
 
 
 <?php foreach($marks as $name => $subjects){
@@ -56,8 +75,9 @@ $marks = [
 		
 		<?php foreach($subjects as $subject => $mark){ ?>
 		<tr>
+	
 			<td> <?php echo $subject; ?></td> 
-			<td> <?php echo $mark; ?></td>
+			<td style="background-color:<?php echo setBgColor($mark);?>;"> <?php echo $mark; ?></td>
 		</tr>
 		<?php $total = $total + $mark; ?>
 		<?php } ?>
