@@ -34,8 +34,10 @@ $sum1 = function($num1,$num2){
 $sum2 =fn($num1,$num2) => $num1+$num2;
 
 function getStudent(...$name){
-	return $name;
+	print_r ($name);
 }
+
+$getStudent2 = fn(...$name) => $name;
 
 
 ?>
@@ -47,8 +49,9 @@ function getStudent(...$name){
 <?php $getName4("Kirishann");?><br/>
 <?php echo $sum1(10,20);?><br/>
 <?php echo $sum2(10,20);?><br/>
-<?php echo $getName5("Kirishann");?>
-<?php echo getStudent("Kirishann","kiri","shan");?>
+<?php echo $getName5("Kirishann");?></br>
+<?php getStudent("Kirishann","kiri","shan");?>
+<?php print_r( getStudent2("Kirishann","kiri","shan"));?>
 </body>
 
 </html>
