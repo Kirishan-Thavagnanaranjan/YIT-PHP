@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Form</title>
+<title>check Form</title>
 </head>
 <body>
 
 
-<form action="form2.php" method="post" autocomplete="on">
+<form action="save.php" method="post" autocomplete="on">
 <fieldset>
 <table border="1">
 	<tr>
@@ -14,16 +14,16 @@
 	</tr>
 	<tr>
 		<td><label for ="fname">First Name</label></td>
-		<td><input type="text" name="fname" id="fname" placeholder="Enter your first name" ></td>
+		<td><input type="text" name="fname" id="fname" placeholder="Enter your first name" value="<?php echo $_POST['fname']; ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="lname">Last Name</label></td>
-		<td><input type="text" name="lname" id="lname" placeholder="Enter your last name" required></td>
+		<td><input type="text" name="lname" id="lname" placeholder="Enter your last name" value="<?php echo $_POST['lname']; ?>"></td>
 	</tr>
 	<tr>
 		<td><label >Gender</label></td>
-		<td><input type="radio" name="gender" id="male" value="Male" /><label for="male" required>Male</label> 
-		<input type="radio" name="gender" id="female" value="Female"/><label for="female">Female</label> </td>
+		<td><input type="radio" name="gender" id="male" <?php if(isset($_POST['gender']) && $_POST['gender']=="Male") { echo "checked";} ?> value="Male" /><label for="male" >Male</label> 
+		<input type="radio" name="gender" id="female" <?php if(isset($_POST['gender']) && $_POST['gender']=="Female") { echo "checked";} ?> value="Female"/><label for="female">Female</label> </td>
 	</tr>
 	<tr>
 		<td ><label >Subjects</label></td>
@@ -54,23 +54,23 @@
 	</tr>
 	<tr>
 		<td><label for="address">Address</label></td>
-		<td><textarea id="address" name="address" placeholder="Enter your address" rows="3"></textarea></td>
+		<td><textarea id="address" name="address" placeholder="Enter your address" rows="3"><?php echo $_POST['address']; ?></textarea></td>
 	</tr>
 	<tr>
 		<td><label for="ph_number">Phone Number</label></td>
-		<td><input type="tel"  id="ph_number" name="ph_number" placeholder="Enter your phhone number"></td>
+		<td><input type="tel"  id="ph_number" name="ph_number" placeholder="Enter your phone number" value="<?php echo $_POST['ph_number']; ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="email">E-mail</label></td>
-		<td><input type="email"  id="email" name="email" placeholder="example@gmail.com"></td>
+		<td><input type="email"  id="email" name="email" placeholder="example@gmail.com" value="<?php echo $_POST['email']; ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="dob">Date of birth</label></td>
-		<td><input type="date"  id="dob" name="dob" required></td>
+		<td><input type="date"  id="dob" name="dob" value="<?php echo $_POST['dob']; ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="join_date">Join date</label></td>
-		<td><input type="date"  id="join_date" name="join_date"></td>
+		<td><input type="date"  id="join_date" name="join_date" value="<?php echo $_POST['join_date']; ?>"></td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center"><input type="checkbox" name="terms" id="terms" value="true">
