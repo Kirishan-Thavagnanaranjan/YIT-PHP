@@ -28,9 +28,10 @@
 	<tr>
 		<td ><label >Subjects</label></td>
 		<td>
-			<input type="checkbox" name="subject[]" id="subject1" value="maths"/><label for="subject1">Math</label><br/>
-			<input type="checkbox" name="subject[]" id="subject2" value="English"/><label for="subject2">English</label><br/>
-			<input type="checkbox" name="subject[]" id="subject3" value="Tamil"/><label for="subject3">Tamil</label>
+		<?php $subjects = $_POST['subject'];?>
+			<input type="checkbox" name="subject[]" id="subject1" value="maths" <?php  if(in_array("maths",$subjects)){echo "checked";}?> /><label for="subject1">Math</label><br/>
+			<input type="checkbox" name="subject[]" id="subject2" value="English" <?php  if(in_array("English",$subjects)){echo "checked";}?>/><label for="subject2">English</label><br/>
+			<input type="checkbox" name="subject[]" id="subject3" value="Tamil" <?php  if(in_array("Tamil",$subjects)){echo "checked";}?>/><label for="subject3">Tamil</label>
 		</td>
 	</tr>
 	<tr>
@@ -38,8 +39,8 @@
 		<td>
 			<select id="grade" name="grade" required>
 				<option value="">--Select Grade--</option>
-				<option value="10A">10 A</option>
-				<option value="10B">10 B</option>
+				<option value="10A" <?php if($_POST['grade'] == "10A" ) {echo "selected";} ?>>10 A</option>
+				<option value="10B" <?php if($_POST['grade'] == "10A" ) {echo "selected";} ?>>10 B</option>
 			</select>
 		</td>
 	<tr>
@@ -73,7 +74,7 @@
 		<td><input type="date"  id="join_date" name="join_date" value="<?php echo $_POST['join_date']; ?>"></td>
 	</tr>
 	<tr>
-		<td colspan="2" align="center"><input type="checkbox" name="terms" id="terms" value="true">
+		<td colspan="2" align="center"><input type="checkbox" name="terms" id="terms" value="true" <?php if($_POST['terms'] == true){echo "checked";}?>>
 		<label for="terms">I accept the Terms and Conditions</label></td>
 	</tr>
 	<tr align="center">
